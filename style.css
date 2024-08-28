@@ -4,6 +4,11 @@
     font-family: "Roboto", sans-serif;
 }
 
+header {
+    position: sticky;
+    top: 0;
+}
+
 nav {
     height: 5rem;
     padding: 0 3.2rem;
@@ -19,12 +24,19 @@ nav {
 
 #categories,
 #user-menu {
+    height: 100%;
     color: #232323;
     font-size: 0.8rem;
     font-weight: 700;
     list-style: none;
     display: flex;
-    gap: 2rem;
+}
+
+#categories li,
+#user-menu li {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
 }
 
 #categories li:hover,
@@ -44,6 +56,10 @@ nav {
     gap: 1rem;
 }
 
+#search-div:focus-within {
+    background-color: #FFF;
+}
+
 #search-icon {
     width: 1rem;
 }
@@ -52,8 +68,14 @@ nav {
     width: 100%;
     padding: 0.5rem 0;
     background-color: #F5F5F5;
+    caret-color: #808080;
+    color: #808080;
     border: none;
     outline: none;
+}
+
+#search-bar:focus {
+    background-color: #FFF;
 }
 
 #user-menu li {
