@@ -20,3 +20,16 @@ const spotlightSliderDots = document.querySelectorAll('#spotlight-slider-nav but
 
 // Initializing Image Slider For Spotlight Brands
 createImagesSlider(spotlightBrandsImages, spotlightSliderDots, 2500);
+
+// Selecting All Images In The Featured Brands Slider
+const featuredBrandsSlides = document.querySelectorAll('.featured-brands-slide');
+// Selecting All Navigation Dots For The Featured Brands Slider
+const featuredSliderDots = document.querySelectorAll('#featured-slider-nav button');
+// Selecting All Images In The Global Brands Slider
+const globalBrandsSlides = document.querySelectorAll('.global-brands-slide');
+// Selecting All Navigation Dots For The Global Brands Slider
+const globalSliderDots = document.querySelectorAll('#global-slider-nav button');
+
+// Initializing Images Slider For Featured Brands And Global Brands Slider
+createImagesSlider(featuredBrandsSlides, featuredSliderDots, 5000);
+createImagesSlider(globalBrandsSlides, globalSliderDots, 5000);
