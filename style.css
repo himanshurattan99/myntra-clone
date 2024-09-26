@@ -220,3 +220,18 @@ h2 {
 #global-slider-nav button:hover {
     background-color: #8F8F8F;
 }
+
+#shop-by-category {
+    padding: 0 3.2rem;
+}
+
+#shop-by-category section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#shop-by-category img {
+    width: 16%;
+    cursor: pointer;
+}
