@@ -235,3 +235,77 @@ h2 {
     width: 16%;
     cursor: pointer;
 }
+
+footer {
+    padding: 3.2rem 12.5rem;
+    background-color: #FAFBFC;
+}
+
+#generic-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+#generic-info ul {
+    padding: 1rem 0 2rem;
+    list-style: none;
+}
+
+#generic-info ul li {
+    padding: 0.125rem 0;
+    color: #696b79;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+h3 {
+    font-size: 0.75rem;
+}
+
+#app-experience img {
+    cursor: pointer;
+}
+
+#app-links img {
+    height: 2.5rem;
+    margin-right: 0.25rem;
+    padding: 1.25rem 0 2rem;
+}
+
+#social-media-handles img {
+    height: 1.25rem;
+    margin-right: 0.5rem;
+    padding: 0.5rem 0;
+}
+
+#promises img {
+    width: 3.2rem;
+}
+
+#promises>div {
+    max-width: 18rem;
+    padding: 0.75rem 0;
+    color: #696b79;
+    font-size: 0.9rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+#promises strong {
+    color: #000000;
+}
+
+#info-section {
+    padding: 2.5rem 0 0;
+    border-top: 0.05rem solid #D8D8D8;
+    color: #696b79;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+#contact strong {
+    color: #526CD0;
+    cursor: pointer;
+}
