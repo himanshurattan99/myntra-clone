@@ -8,12 +8,13 @@ header {
     background-color: #FFF;
     position: sticky;
     top: 0;
+    z-index: 10;
 }
 
 nav {
     height: 5rem;
     padding: 0 3.2rem;
-    box-shadow: 0 0.25rem 1rem 0 rgba(0, 0, 0, 0.05);
+    box-backdrop: 0 0.25rem 1rem 0 rgba(0, 0, 0, 0.05);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -31,15 +32,142 @@ nav {
     font-weight: 700;
     list-style: none;
     display: flex;
+    position: relative;
 }
 
-#categories li,
-#user-menu li {
+#categories>li,
+#user-menu>li {
     padding: 1rem;
     border-bottom: 0.18rem solid #FFF;
     display: flex;
     align-items: center;
     cursor: pointer;
+}
+
+#categories>.dropdown>.backdrop,
+#user-menu>.dropdown>.backdrop {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 5rem;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .3);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease-in-out;
+    z-index: -2;
+}
+
+#categories>.dropdown:hover>.backdrop,
+#user-menu>.dropdown:hover>.backdrop {
+    opacity: 1;
+}
+
+#categories>.dropdown>.menu {
+    width: 75vw;
+    background-color: #FFF;
+    display: flex;
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out;
+    cursor: default;
+}
+
+#categories>.dropdown:hover>.menu {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#categories .menu-col {
+    width: 20%;
+    padding: 1rem 2rem;
+}
+
+#categories .menu-col-odd {
+    background-color: #f5f5f666;
+}
+
+#categories .menu-item {
+    margin-bottom: 1rem;
+}
+
+#categories .menu-item>h3 {
+    padding: 0.5rem 0;
+    color: #EE5F73;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+#categories .menu-item>ul {
+    list-style: none;
+}
+
+#categories .menu-item li {
+    padding: 0.25rem 0;
+    color: #282C3F;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#categories .menu-item li:hover {
+    font-weight: 600;
+}
+
+#studio {
+    position: relative;
+}
+
+#studio>span {
+    color: #ff3f6c;
+    font-size: 0.625rem;
+    position: absolute;
+    top: 1.5rem;
+    left: 80%;
+}
+
+#categories #studio .menu {
+    width: 35vw;
+    padding: 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    left: -15vw;
+}
+
+#studio img {
+    display: block;
+    width: 100%;
+}
+
+#studio-image {
+    max-width: 20%;
+}
+
+#studio h3 {
+    color: #535766;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+#studio button {
+    padding: 0.75rem 2rem;
+    background-color: #FFF;
+    color: #282c3f;
+    font-weight: 600;
+    border: 0.05rem solid #d4d5d8;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+#studio button>span {
+    margin-left: 0.5rem;
 }
 
 #search-div {
@@ -76,7 +204,7 @@ nav {
     background-color: #FFF;
 }
 
-#user-menu li {
+#user-menu>li {
     font-size: 0.75rem;
     display: flex;
     flex-direction: column;
@@ -88,6 +216,77 @@ nav {
 #user-menu img {
     width: 1rem;
     height: 1rem;
+}
+
+#user-menu>.dropdown>.menu {
+    padding: 1rem 1.5rem;
+    background-color: #FFF;
+    position: absolute;
+    top: 5rem;
+    right: 35%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#user-menu>.dropdown:hover>.menu {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#user-menu .menu>h3 {
+    padding: 0.25rem 0;
+    font-size: 0.9rem;
+}
+
+#user-menu .menu>div {
+    width: max-content;
+    color: #535766;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+#user-menu .menu>button {
+    margin: 0.75rem 0;
+    padding: 0.5rem 1.5rem;
+    background-color: #FFF;
+    border: 0.1rem solid #eaeaec;
+    border-radius: 0.25rem;
+    color: #ff3f6c;
+    font-weight: 600;
+}
+
+#user-menu .menu>button:hover {
+    border-color: #ff3f6c;
+    cursor: pointer;
+}
+
+#user-menu .menu>ul {
+    list-style: none;
+    padding: 0.5rem 0;
+    border-top: 0.05rem solid #eaeaec;
+}
+
+#user-menu .menu li {
+    padding: 0.25rem 0;
+    color: #535766;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#user-menu .menu li:hover {
+    font-weight: 600;
+}
+
+#user-menu li>span {
+    display: inline-block;
+    margin-left: 0.5rem;
+    padding: 0 0.5rem;
+    border-radius: 0.125rem;
+    background-color: #ff3f6c;
+    color: #FFF;
+    transform: skewX(-10deg);
 }
 
 main {

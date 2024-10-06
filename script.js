@@ -1,13 +1,13 @@
 import { setHoverColors, createImagesSlider } from './utils.js';
 
 // Selecting All List Items Within The Categories Section
-const categoryItems = document.querySelectorAll('#categories li');
+const categoryItems = document.querySelectorAll('#categories>li');
 // Defining Colors For Each Category Item
-const categoryColors = ['#E72744', '#F13AB1', '#F05524', '#FD913C', '#0ABAB5', '#E72744'];
+const categoryColors = ['#EE5F73', '#FB56C1', '#F26A10', '#F2C210', '#0DB7AF', '#FF3F6C'];
 // Selecting All List Items Within The User Menu Section
-const userMenuItems = document.querySelectorAll('#user-menu li');
+const userMenuItems = document.querySelectorAll('#user-menu>li');
 // Defining Colors For Each User Menu Item
-const userMenuColors = ['#E72744', '#F13AB1', '#F05524'];
+const userMenuColors = ['#F16565', '#F13AB1', '#F05524'];
 
 // Applying Hover Effects To border-bottom-color Property Of Category And User Menu Items
 setHoverColors(categoryItems, 'borderBottomColor', categoryColors);
