@@ -15,6 +15,22 @@ export const setHoverColors = (elements, property, hoverColors) => {
     });
 }
 
+// Function To Add Colors To Child Elements Of Given Parent Elements
+export const setChildElementsColors = (parentElements, childSelector, property, colors) => {
+    parentElements.forEach((parentElement, index) => {
+        // Find All Matching Child Elements Within The Current Parent
+        const childElements = parentElement.querySelectorAll(childSelector);
+
+        // Select Color From Array, Loop Back To Start If Needed
+        const color = colors[index % colors.length];
+
+        // Apply Color To Specified Property Of Each Child Element
+        childElements.forEach((childElement) => {
+            childElement.style[property] = color;
+        });
+    });
+}
+
 // Function To Create An Image Slider With Automatic Sliding And Navigation Dots
 export const createImagesSlider = (images, sliderDots, interval) => {
     // Setting The Initial Active Dot Color

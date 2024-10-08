@@ -14,7 +14,7 @@ header {
 nav {
     height: 5rem;
     padding: 0 3.2rem;
-    box-backdrop: 0 0.25rem 1rem 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0.25rem 1rem 0 rgba(0, 0, 0, 0.05);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -76,6 +76,7 @@ nav {
     pointer-events: none;
     transition: opacity 0.5s ease-in-out;
     cursor: default;
+    z-index: -1;
 }
 
 #categories>.dropdown:hover>.menu {
@@ -98,7 +99,6 @@ nav {
 
 #categories .menu-item>h3 {
     padding: 0.5rem 0;
-    color: #EE5F73;
     font-size: 0.8rem;
     cursor: pointer;
 }

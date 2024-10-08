@@ -1,4 +1,4 @@
-import { setHoverColors, createImagesSlider } from './utils.js';
+import { setHoverColors, setChildElementsColors, createImagesSlider } from './utils.js';
 
 // Selecting All List Items Within The Categories Section
 const categoryItems = document.querySelectorAll('#categories>li');
@@ -12,6 +12,11 @@ const userMenuColors = ['#F16565', '#F13AB1', '#F05524'];
 // Applying Hover Effects To border-bottom-color Property Of Category And User Menu Items
 setHoverColors(categoryItems, 'borderBottomColor', categoryColors);
 setHoverColors(userMenuItems, 'borderBottomColor', userMenuColors);
+
+// Selecting All Menu Elements Within The Categories Section
+const dropdownMenus = document.querySelectorAll('#categories .menu');
+// Applying Colors To The h3 Elements Within Menu Items In Dropdown Menus
+setChildElementsColors(dropdownMenus, '.menu-item>h3', 'color', categoryColors);
 
 // Selecting All Images In The Spotlight Brands Slider
 const spotlightBrandsImages = document.querySelectorAll('#spotlight-brands-slider img');
