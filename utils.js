@@ -32,32 +32,32 @@ export const setChildElementsColors = (parentElements, childSelector, property, 
 }
 
 // Function To Create An Image Slider With Automatic Sliding And Navigation Dots
-export const createImagesSlider = (images, sliderDots, interval) => {
+export const createImagesSlider = (slides, sliderDots, interval) => {
     // Setting The Initial Active Dot Color
     sliderDots[0].style.backgroundColor = '#8F8F8F';
 
     // Initializing The Current Slide Index
     let currentIndex = 0;
 
-    // Function To Slide To The Next Image
-    const slideImage = () => {
+    // Function To Slide To The Next Slide
+    const slide = () => {
         // Resetting The Color Of The Current Navigation Dot
         sliderDots[currentIndex].style.backgroundColor = '#D8D8D8';
 
         // Moving To The Next Slide (Looping Back To Start If At The End)
-        currentIndex = (currentIndex + 1) % images.length;
+        currentIndex = (currentIndex + 1) % slides.length;
 
         // Setting The Color Of The New Current Navigation Dot
         sliderDots[currentIndex].style.backgroundColor = '#8F8F8F';
 
-        // Moving All Images To Show The Current Slide
-        images.forEach((image) => {
-            image.style.transform = `translateX(${-(currentIndex * 100)}%)`;
+        // Moving All Slides To Show The Current Slide
+        slides.forEach((slide) => {
+            slide.style.transform = `translateX(${-(currentIndex * 100)}%)`;
         });
     }
 
-    // Setting Interval To Automatically Slide Image Every 2.5s
-    setInterval(slideImage, interval);
+    // Setting Interval To Automatically Slide Every 2.5s
+    setInterval(slide, interval);
 
     // Adding Click Event Listeners To All Slider Navigation Dots
     sliderDots.forEach((sliderDot, index) => {
@@ -67,10 +67,10 @@ export const createImagesSlider = (images, sliderDots, interval) => {
             // Setting The Color Of The Clicked Navigation Dot
             sliderDots[index].style.backgroundColor = '#8F8F8F';
 
-            // Setting The Current Index To One Before The Clicked Index Because slideImage() Will Immediately Move The Index To The Next Slide
-            currentIndex = (index === 0) ? images.length - 1 : index - 1;
-            // Triggering The Slide Image Function
-            slideImage();
+            // Setting The Current Index To One Before The Clicked Index Because slide() Will Immediately Move The Index To The Next Slide
+            currentIndex = (index === 0) ? slides.length - 1 : index - 1;
+            // Triggering The Slide Function
+            slide();
         });
     });
 }

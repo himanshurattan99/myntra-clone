@@ -19,21 +19,21 @@ const dropdownMenus = document.querySelectorAll('#categories .menu');
 setChildElementsColors(dropdownMenus, '.menu-item>h3', 'color', categoryColors);
 
 // Selecting All Images In The Spotlight Brands Slider
-const spotlightBrandsImages = document.querySelectorAll('#spotlight-brands-slider img');
+const spotlightBrandsImages = document.querySelectorAll('#spotlight-brands-slider>img');
 // Selecting All Navigation Dots For The Spotlight Brands Slider
-const spotlightSliderDots = document.querySelectorAll('#spotlight-slider-nav button');
+const spotlightSliderDots = document.querySelectorAll('#spotlight-brands>.slider-nav>button');
 
 // Initializing Image Slider For Spotlight Brands
 createImagesSlider(spotlightBrandsImages, spotlightSliderDots, 2500);
 
 // Selecting All Images In The Featured Brands Slider
-const featuredBrandsSlides = document.querySelectorAll('.featured-brands-slide');
+const featuredBrandsSlides = document.querySelectorAll('#featured-brands>.slider>.slide');
 // Selecting All Navigation Dots For The Featured Brands Slider
-const featuredSliderDots = document.querySelectorAll('#featured-slider-nav button');
+const featuredSliderDots = document.querySelectorAll('#featured-brands>.slider-nav>button');
 // Selecting All Images In The Global Brands Slider
-const globalBrandsSlides = document.querySelectorAll('.global-brands-slide');
+const globalBrandsSlides = document.querySelectorAll('#global-brands>.slider>.slide');
 // Selecting All Navigation Dots For The Global Brands Slider
-const globalSliderDots = document.querySelectorAll('#global-slider-nav button');
+const globalSliderDots = document.querySelectorAll('#global-brands>.slider-nav>button');
 
 // Initializing Images Slider For Featured Brands And Global Brands Slider
 createImagesSlider(featuredBrandsSlides, featuredSliderDots, 5000);
